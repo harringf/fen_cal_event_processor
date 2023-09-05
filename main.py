@@ -37,11 +37,11 @@ def events_calendar():
 for event in events_calendar():
     event_name = event['summary']
     event_start = event['start'].get('dateTime', event['start'].get('date'))
-    event_description = event.get('description', 'Nenhuma descrição disponível.')
-    event_location = event.get('location', 'Nenhum endereço disponível.')
+    event_description = event.get('description', 'No description available.')
+    event_location = event.get('location', 'No address available.')
 
-    print(f'Nome do Evento: {event_name}')
-    print(f'Data e Hora do Evento: {event_start}')
-    print(f'Endereço: {event_location}')
-    print(f'Descrição do Evento: {event_description}')
+    print(f'Event Name: {event_name}')
+    print(f'Event Date and Time: {event_start}')
+    print(f'Address: {event_location}')
+    print(f'Description of the event: {event_description}')
     print('---')
