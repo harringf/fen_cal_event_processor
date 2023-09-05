@@ -14,10 +14,10 @@ creds = service_account.Credentials.from_service_account_file(
 calendar_service = build('calendar', 'v3', credentials=creds)
 
 def events_calendar():
-    # Data atual
+    #Now Date
     now = datetime.datetime.utcnow()
 
-    # Data atual + 6 meses
+    # Now Date + 6 month
     six_months_later = now + datetime.timedelta(days=180)
 
     time_min = now.isoformat() + 'Z'
@@ -27,7 +27,7 @@ def events_calendar():
         calendarId=ID_CALENDAR,
         timeMin=time_min,
         timeMax=time_max,
-        maxResults=10,  # Número máximo de eventos a serem retornados
+        maxResults=10,  # number of max events to return
         singleEvents=True,
         orderBy='startTime'
     ).execute()
